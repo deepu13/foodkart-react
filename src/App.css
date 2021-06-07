@@ -1,0 +1,37 @@
+:root {
+  --black: #2b2d42ff;
+--ash: #8d99aeff;
+--grey: #edf2f4ff;
+--red: #ef233cff;
+--maroon: #d90429ff;
+}
+
+.App {
+  background-color: var(--grey);
+}
+
+header > h1 {
+  font-family: 'Luckiest Guy', cursive;
+  color: var(--maroon);
+  font-size: 3em;
+}
+
+.btn {
+  background-color: var(--red);
+  color: var(--grey);
+}
+
+.body {
+  font-family: 'Bree Serif', serif;
+}
+
+.nav a{
+  text-decoration: none;
+  color: var(--red);
+  font-size: 1.4em;
+}
+
+.image {
+  min-height: 50%;
+  width: auto !important;
+}
