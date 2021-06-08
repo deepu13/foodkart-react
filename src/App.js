@@ -33,21 +33,13 @@ class App extends React.Component {
     }
   }
 
-  //to add the veg items into the basket
+  //to add items into the basket
 
-  add(index){
+  add(index, type){
     this.setState(prevState => ({
-      basket:[...prevState.basket, this.state.veg[index]]
+      basket:[...prevState.basket, this.state[type][index]]
     }))
   }
-
-  //to add the non-veg items into the basket
-
-  // add(index){
-  //   this.setState(prevState => ({
-  //     basket:[...prevState.basket, this.state.nonveg[index]]
-  //   }))
-  // }
 
   //for veg searching
 
@@ -60,21 +52,14 @@ class App extends React.Component {
         }))
       }
     })
+    datay.map((item,index)=>{
+      if(item.name===word){
+        this.setState(prevState => ({
+          search:[...prevState.search, this.state.nonveg[index]]
+        }))
+      }
+    })
   }
-
-  //for non-veg searching
-
-  // search(event){
-  //   let word=event.target.value;
-  //   datay.map((item,index)=>{
-  //     if(item.name===word){
-  //       this.setState(prevState => ({
-  //         search:[...prevState.search, this.state.nonveg[index]]
-  //       }))
-  //     }
-  //   })
-  // }
-
 
 render() {
   const cart=this.state.cart
@@ -160,13 +145,14 @@ render() {
                       <div key={index} className="col-2 p-4">
                         <div className="Card h-100">
                           <Card index={index} item={item} btn="true"></Card>
-                          <button className="btn w-100" onClick={(e)=>this.add(index)}>Add to cart</button>
+                          <button className="btn w-100" onClick={(e)=>this.add(index, "veg")}>Add to cart</button>
                         </div>
                       </div>
                     )
                   }
                 </div>
-              </div>
+              </div>    
+              <br/><br/><br/>        
             </div>
 
             
@@ -182,11 +168,38 @@ render() {
                       <div key={index} className="col-2 p-4">
                         <div className="Card h-100 ">
                           <Card index={index} item={item}></Card>
-                          <button className="btn pt-0 w-100" onClick={(e)=>this.add(index)}>Add to cart</button>
+                          <button className="btn pt-0 w-100" onClick={(e)=>this.add(index, "nonveg")}>Add to cart</button>
                         </div>
                       </div>
                     )
                   }
+                </div>
+              </div>
+              <br/><br/><br/>
+            </div>
+
+            {/* footer */}
+            <div className="footer w-100">
+              <div className="row">
+                <div className="col-4 branch text-left">
+                  Branches in:<br/>
+                  India <br/>
+                  America <br/>
+                  Europe <br/>
+                </div>
+
+                <div className="col-4">
+                  <h1 className="p-5 text-center footer-title">Foodkart</h1>
+                </div>
+                
+                <div className="col-4 text-center follow">
+                  <p>Follow us on: <br/>
+                    <span className="iconify social" data-icon="cib:instagram" data-inline="false"></span>
+                    <span className="iconify social" data-icon="radix-icons:twitter-logo" data-inline="false"></span>
+                    <span className="iconify social" data-icon="akar-icons:facebook-fill" data-inline="false"></span>
+                    <span className="iconify social" data-icon="cib:whatsapp" data-inline="false"></span>
+                    <span className="iconify social" data-icon="brandico:linkedin-rect" data-inline="false"></span>
+                  </p>
                 </div>
               </div>
             </div>

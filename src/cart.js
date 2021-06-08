@@ -1,7 +1,6 @@
 import React from 'react';
 import {datax,datay}  from './data.js';
 import './App.css';
-import './App.js';
 import Card from './card.js';
 
 class Cart extends React.Component {
@@ -13,7 +12,7 @@ class Cart extends React.Component {
             this.props.basket.map((item,index) =>
               <div key={index} className="col-2 p-3">
                 <div className="card">
-                  <Card index={index} item={item}></Card>
+                  <Card index={index} item={item}></Card>   
                 </div>
               </div> 
             )

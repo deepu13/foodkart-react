@@ -8,6 +8,7 @@
 
 .App {
   background-color: var(--grey);
+  overflow-x: hidden;
 }
 
 header > h1 {
@@ -19,6 +20,7 @@ header > h1 {
 .btn {
   background-color: var(--red);
   color: var(--grey);
+  margin-top: -20%;
 }
 
 .body {
@@ -34,4 +36,36 @@ header > h1 {
 .image {
   min-height: 50%;
   width: auto !important;
+}
+
+.footer {
+  background-color: var(--maroon);
+}
+
+.footer-title {
+  font-family: 'Luckiest Guy', cursive;
+  color: var(--grey);
+  font-size: 3em;
+}
+
+.branch {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 8%;
+  color: var(--grey);
+  font-family: 'Bree Serif', serif;
+  font-size: 1.4em;
+}
+
+.follow {
+  padding-top: 3%;
+  color: var(--grey);
+  font-family: 'Bree Serif', serif;
+  font-size: 1.4em;
+}
+
+.social {
+  padding-top: 2%;
+  padding: 2%;
+  font-size: 2em;
 }
